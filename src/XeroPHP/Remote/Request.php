@@ -100,6 +100,7 @@ class Request
 
         $response = curl_exec($ch);
         $info = curl_getinfo($ch);
+        $this->app->curl_info = $info;
 
         if ($response === false) {
             throw new Exception('Curl error: ' . curl_error($ch));
